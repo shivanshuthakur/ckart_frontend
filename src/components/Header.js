@@ -12,7 +12,7 @@ const Header =() => {
  const getUser = async() => {
    
   axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
-  const res =await axios.get("http://127.0.0.1:5000/getUser");
+  const res =await axios.get("http://165.232.177.108:5000/getUser");
   // console.log(res);
   setUser(res.data);
 }

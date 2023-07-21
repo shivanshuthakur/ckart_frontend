@@ -33,7 +33,7 @@ const Cart = () => {
 
   async function Products() {
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
-    var res = await axios.get("http://127.0.0.1:5000/cartdata");
+    var res = await axios.get("http://165.232.177.108:5000/cartdata");
       res = res.data;
     var total =0;
   res.forEach(item => {
@@ -49,7 +49,7 @@ const Cart = () => {
 
   const remove = async(cart) => {
     axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
-    const res = await axios.post("http://127.0.0.1:5000/deletecart",{cart});
+    const res = await axios.post("http://165.232.177.108:5000/deletecart",{cart});
     console.log(res);
     Products();
     
@@ -57,7 +57,7 @@ const Cart = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-        const res = await axios.post("http://127.0.0.1:5000/order",{
+        const res = await axios.post("http://165.232.177.108:5000/order",{
       firstName  , lastName , userName, email ,address , address2 , zip, card
   });
   console.log(res.data)

@@ -13,14 +13,14 @@ const Home = () =>{
     },[]);
 
     async function getcategories(){
-      const res =await axios.get("http://127.0.0.1:5000/getcategories");
+      const res =await axios.get("http://165.232.177.108:5000/getcategories");
       setheaderNav(res.data);
       console.log(res);
     };
 
     
     async function getProducts(){
-      const res =await axios.post("http://127.0.0.1:5000/all_products");
+      const res =await axios.post("http://165.232.177.108:5000/all_products");
       
       console.log(res.data)
       setProducts(res.data);

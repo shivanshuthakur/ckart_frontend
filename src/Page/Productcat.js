@@ -9,12 +9,11 @@ const Productcat = ()  => {
     useEffect(() => {
       Products ();
 
-    },[])
-          
+    },[])        
     
 
     async function Products(){
-        const res = await axios.post("http://127.0.0.1:5000/all_Products",{
+        const res = await axios.post("http://165.232.177.108:5000/all_Products",{
             id:params [1]
         });
         setProducts(res.data);
